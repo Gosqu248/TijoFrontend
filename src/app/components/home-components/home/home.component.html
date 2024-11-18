@@ -1,0 +1,14 @@
+<div class="home-container">
+  <img class="home-image" [src]="apiUrl + background" alt="Background">
+  <div class="search-container gradient-border">
+    <div class="search-background">
+      <h1> Nie wiesz co dziś zjeść? </h1>
+      <h2> Znajdź restauracje w pobliżu dla siebie </h2>
+      <div class="search-bar">
+        <input class="search-input" type="text" [(ngModel)]="searchAddress" placeholder="Wprowadź address">
+        <button (click)="searchRestaurants()">Szukaj</button>
+      </div>
+    </div>
+  </div>
+
+</div>

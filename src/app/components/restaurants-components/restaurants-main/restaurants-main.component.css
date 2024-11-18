@@ -1,0 +1,66 @@
+.restaurant-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  overflow-y: hidden;
+  font-family: "Arial", sans-serif;
+  background: whitesmoke;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+  width: 1300px;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+.sorted-h4 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+}
+
+.search-input {
+  border: 1px solid #a29f9f;
+  width: 800px;
+  height: 60px;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+  border-radius: 40px 40px 40px 40px;
+  position: relative;
+  background: white;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-bottom: -10px;
+}
+
+.restaurants {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+
+}
+
