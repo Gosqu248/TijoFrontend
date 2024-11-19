@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Order} from '../interface/order';
 import {CartService} from './cart.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,5 +23,4 @@ export class OrderService {
       }
     });
   }
-
 }

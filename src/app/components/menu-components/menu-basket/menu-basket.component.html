@@ -34,7 +34,7 @@
         <h3>Razem: </h3>
         <h3>{{totalPrice | number: '1.2-2'}} zł</h3>
       </div>
-      <button class="order-button"   type="submit">
+      <button class="order-button"  (click)="createOrder()" type="submit">
         Zamów ({{totalPrice | number: '1.2-2'}} zł)
       </button>
     </div>

@@ -5,6 +5,8 @@ import {OrderMenu} from '../../../interface/order-menu';
 import {CartService} from '../../../services/cart.service';
 import {RestaurantService} from '../../../services/restaurant.service';
 import {Restaurant} from '../../../interface/restaurant';
+import {Order} from '../../../interface/order';
+import {OrderService} from '../../../services/order.service';
 
 @Component({
   selector: 'app-menu-basket',
@@ -30,6 +32,7 @@ export class MenuBasketComponent implements OnInit{
   serviceFee: number = 2;
 
   constructor(private cartService: CartService,
+              private orderService: OrderService,
               private restaurantService: RestaurantService) {}
 
   ngOnInit() {
@@ -52,6 +55,16 @@ export class MenuBasketComponent implements OnInit{
       this.ordersPrice = this.cartService.calculateOrdersPrice(this.orderMenus);
       this.totalPrice = this.ordersPrice + this.deliveryPrice + this.serviceFee;
     });
+  }
+
+  createOrder() {
+    const order: Order = {
+      totalPrice: this.totalPrice,
+      restaurant: this.restaurant,
+      orderMenus: this.orderMenus,
+    }
+
+    this.orderService.createOrder(order)
   }
 
 }
