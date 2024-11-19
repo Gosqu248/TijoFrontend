@@ -1,0 +1,18 @@
+<div class="info-container">
+  <div class="left-container">
+    <img class="image" [src]="restaurant.logoUrl" alt="restaurant image" />
+    <h2 class="name">{{ restaurant.name }}</h2>
+  </div>
+
+</div>
+
+<div class="menu-container">
+  <div class="search-container">
+  </div>
+  <app-menu-item
+    *ngFor="let category of categories"
+    [menu]="menu"
+    [category]=category
+    class="menu-item"
+  ></app-menu-item>
+</div>

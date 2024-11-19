@@ -9,7 +9,10 @@ export const routes: Routes = [
   {
     path: 'restaurants',
     loadComponent: () => import('./components/restaurants-components/restaurants-main/restaurants-main.component').then(m => m.RestaurantsMainComponent),
-
-  }
+  },
+  {
+    path: 'menu',
+    loadComponent: () => import('./components/menu-components/menu-main/menu-main.component').then(m => m.MenuMainComponent),
+  },
 
 ];

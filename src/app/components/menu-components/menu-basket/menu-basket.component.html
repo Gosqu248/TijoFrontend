@@ -1,0 +1,44 @@
+<div class="basket-container">
+  <h2> Twoje zamównienie</h2>
+
+  <ng-container *ngIf="orderMenus.length === 0">
+    <i class="fa-solid fa-basket-shopping"></i>
+    <h2> Koszyk pusty</h2>
+    <h5> Nie dodano nic</h5>
+  </ng-container>
+
+  <ng-container *ngIf="orderMenus.length > 0">
+    <div class="cart-container">
+      <app-menu-basket-item
+        *ngFor="let orderMenu of orderMenus"
+        [orderMenu]="orderMenu"
+
+        class="order-item"
+      ></app-menu-basket-item>
+    </div>
+
+    <div class="summary-container">
+      <div class="first-container">
+        <p>Łącznie: </p>
+        <p>{{ ordersPrice | number:'1.2-2'}} zł</p>
+      </div>
+      <div class="first-container">
+        <p>Koszt dostawy: </p>
+        <p>{{deliveryPrice | number: '1.2-2'}} zł</p>
+      </div>
+      <div class="first-container" >
+        <p>Opłata serwisowa: </p>
+        <p>{{serviceFee | number: '1.2-2'}} zł</p>
+      </div>
+      <div class="total">
+        <h3>Razem: </h3>
+        <h3>{{totalPrice | number: '1.2-2'}} zł</h3>
+      </div>
+      <button class="order-button"   type="submit">
+        Zamów ({{totalPrice | number: '1.2-2'}} zł)
+      </button>
+    </div>
+
+  </ng-container>
+
+</div>

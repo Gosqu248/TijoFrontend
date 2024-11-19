@@ -8,14 +8,38 @@
   overflow-y: hidden;
   font-family: "Arial", sans-serif;
   background: whitesmoke;
+
+}
+
+.first-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 50px;
+
+}
+
+h2 {
+  padding: 20px 50px;
+  border-radius: 30px;
+  background-color: #fabb85;
+
+}
+
+.address {
+  font-size: 22px;
+  font-weight: normal;
+
 }
 
 .main-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 1300px;
   height: auto;
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -30,8 +54,10 @@
 .second-section {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 80%;
   height: 100%;
+  align-items: center;
+  margin: auto;
 }
 
 .search-input {
@@ -55,6 +81,7 @@ h3 {
 }
 
 .restaurants {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

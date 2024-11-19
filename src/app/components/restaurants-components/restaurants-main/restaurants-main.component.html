@@ -1,5 +1,9 @@
 <div class="restaurant-container">
   <div class="main-container">
+    <div class="first-container">
+      <h2><span class="address">Adres lokalizacji: </span> {{address}} </h2>
+    </div>
+
     <div class="second-section">
 
       <h3>Wyszukano  {{ getRestaurantQuantity() }} restaurację</h3>
@@ -8,6 +12,7 @@
         <app-restaurant-item
           *ngFor="let restaurant of searchedRestaurants"
           [restaurantId]="restaurant.restaurantId"
+          [distance]="restaurant.distance"
         ></app-restaurant-item>
       </div>
 

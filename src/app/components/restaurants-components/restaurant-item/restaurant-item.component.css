@@ -76,14 +76,12 @@ h3 {
 .left-description {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 
 .description-item {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   margin-right: 30px;
 }
@@ -91,6 +89,7 @@ h3 {
 .fa-regular, .fa-solid {
   margin-right: 5px;
 }
+
 h5 {
   font-size: 15px;
   font-weight: normal;

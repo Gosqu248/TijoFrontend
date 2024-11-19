@@ -16,8 +16,10 @@ import {DecimalPipe} from '@angular/common';
 export class RestaurantItemComponent implements OnInit{
   @Input() restaurantId!: number;
   restaurant: Restaurant = {} as Restaurant;
+  @Input() distance!: number;
 
-  constructor(private restaurantService: RestaurantService) {}
+  constructor(private restaurantService: RestaurantService,
+              private router: Router) {}
 
   ngOnInit() {
     this.getRestaurant();
@@ -29,7 +31,10 @@ export class RestaurantItemComponent implements OnInit{
     });
   }
 
-
+  goToMenu() {
+    sessionStorage.setItem('restaurantId', this.restaurantId.toString());
+    this.router.navigate(['menu']);
+  }
 
 
 

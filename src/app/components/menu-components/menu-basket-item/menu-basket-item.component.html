@@ -1,0 +1,15 @@
+<div class="name">
+  <h5> {{orderMenu.menu.name}}</h5>
+  <p> {{orderPrice | number:'1.2-2'}} zł</p>
+</div>
+<div class="third-section">
+  <div class="quantity">
+    <button (click)="removeOne()">
+      -
+    </button>
+    <h4> {{orderMenu.quantity}}</h4>
+    <button (click)="addOne()">
+      +
+    </button>
+  </div>
+</div>

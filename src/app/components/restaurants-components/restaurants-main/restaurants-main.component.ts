@@ -18,7 +18,7 @@ import {NgForOf} from '@angular/common';
 })
 export class RestaurantsMainComponent implements OnInit{
   searchedRestaurants: SearchedRestaurant[] = [];
-
+  address: string = '';
 
   constructor(private restaurantAddressService: RestaurantAddressService) {}
 
@@ -29,9 +29,11 @@ export class RestaurantsMainComponent implements OnInit{
 
   loadRestaurant() {
     const address = sessionStorage.getItem('searchAddress');
+
     if (!address) {
       throw new Error('No address found');
     }
+    this.address = address;
     this.restaurantAddressService.searchedRestaurant(address).subscribe((data: SearchedRestaurant[]) => {
       console.log(data);
       this.searchedRestaurants = data;
