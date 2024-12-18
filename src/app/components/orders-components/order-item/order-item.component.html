@@ -1,0 +1,27 @@
+<div class="main">
+
+  <div class="row-container">
+    <img class="image" alt="" [src]="order.restaurant.logoUrl">
+    <div>
+      <p>Zamówienie z:  <span class="restaurantName">{{order.restaurant.name}}</span></p>
+      <p>Łączna kwota: <span class="span">{{order.totalPrice}} zł</span></p>
+    </div>
+  </div>
+
+  <div class="buttons">
+
+    <button class="toggle-btn" (click)="toggleVisibility()">
+      {{ isVisible ? "Ukryj menu" : "Pokaż menu" }}
+    </button>
+
+  </div>
+  <div
+    *ngIf="isVisible">
+    <app-order-menu-item
+      *ngFor="let menuItem of order.orderMenus"
+      [menuItem]="menuItem"
+    ></app-order-menu-item>
+  </div>
+
+
+</div>

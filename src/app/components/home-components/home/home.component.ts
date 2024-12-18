@@ -23,6 +23,10 @@ export class HomeComponent {
     sessionStorage.setItem('searchAddress', this.searchAddress);
     this.router.navigate(['/restaurants'])
   }
+
+  allOrders() {
+    this.router.navigate(['/orders']);
+  }
 }
 
 

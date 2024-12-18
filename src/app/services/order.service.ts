@@ -12,6 +12,9 @@ export class OrderService {
   private apiUrl = environment.api + '/api/order';
   constructor(private http: HttpClient, private cartService: CartService) { }
 
+  getAllOrders() {
+    return this.http.get<Order[]>(`${this.apiUrl}/all`);
+  }
   createOrder(order: Order) {
     order.totalPrice = parseFloat(order.totalPrice.toFixed(2));
     return this.http.post<Order>(`${this.apiUrl}/createOrder`, order).subscribe({

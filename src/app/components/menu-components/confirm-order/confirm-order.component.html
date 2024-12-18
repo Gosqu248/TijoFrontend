@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Potwierdzenie zamówienia</h1>
+  <p>Twoje zamówienie zostało przekazane do realizacji!</p>
+  <ul>
+    <li *ngFor="let orderMenu of data.orderMenus">
+      {{ orderMenu.menu.name }} - {{ orderMenu.quantity }} x {{ orderMenu.menu.price }} zł
+    </li>
+  </ul>
+  <h2>Łączna kwota: {{ data.totalPrice | number: '1.2-2' }} zł</h2>
+  <button (click)="closeDialog()">Close</button>
+</div>

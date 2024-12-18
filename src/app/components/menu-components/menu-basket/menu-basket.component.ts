@@ -7,6 +7,8 @@ import {RestaurantService} from '../../../services/restaurant.service';
 import {Restaurant} from '../../../interface/restaurant';
 import {Order} from '../../../interface/order';
 import {OrderService} from '../../../services/order.service';
+import {MatDialog} from '@angular/material/dialog';
+import {ConfirmOrderComponent} from '../confirm-order/confirm-order.component';
 
 @Component({
   selector: 'app-menu-basket',
@@ -33,6 +35,7 @@ export class MenuBasketComponent implements OnInit{
 
   constructor(private cartService: CartService,
               private orderService: OrderService,
+              private dialog: MatDialog,
               private restaurantService: RestaurantService) {}
 
   ngOnInit() {
@@ -65,6 +68,17 @@ export class MenuBasketComponent implements OnInit{
     }
 
     this.orderService.createOrder(order)
+    this.openOrderConfirmationDialog();
   }
 
+  openOrderConfirmationDialog() {
+    this.dialog.open(ConfirmOrderComponent, {
+      height: '400px',
+      width: '600px',
+      data: {
+        orderMenus: this.orderMenus,
+        totalPrice: this.totalPrice
+      },
+    });
+  }
 }

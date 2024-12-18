@@ -136,6 +136,23 @@
   background-color: #ff5a36;
 }
 
+
+.orders-button {
+  width: auto;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 100px;
+  background-color: #feb47b;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.orders-button:hover {
+  background-color: #ff7e5f;
+}
+
 @media (max-width: 800px) {
 
   .search-background {
